@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Menu Navbar | MetaSkillGroup</title>
+  <meta name="description" content="A responsive, animated glassmorphism mega menu navbar with nested multi-level dropdowns and mobile off-canvas drawer built for MetaSkillGroup.">
+  <meta name="keywords" content="mega menu, navbar, nested dropdown, glassmorphism, responsive navigation, web design, MetaSkillGroup">
+  <meta name="author" content="MetaSkillGroup">
+  <meta property="og:title" content="Mega Menu Navbar | MetaSkillGroup">
+  <meta property="og:description" content="Experience modern glassmorphism navigation featuring full-width mega menus, multi-level nested dropdowns, and mobile accordion drawer.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0819">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="blob-wrapper" aria-hidden="true">
+    <div class="blob blob-purple"></div>
+    <div class="blob blob-cyan"></div>
+    <div class="blob blob-pink"></div>
+  </div>
+
+  <header class="site-header" id="mainHeader">
+    
+    <div class="scroll-progress-container" aria-hidden="true">
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+    <div class="nav-container">
+      
+      <a href="#home" class="brand-logo" aria-label="MetaSkillGroup Homepage">
+        <svg class="logo-svg" viewBox="0 0 210 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MetaSkillGroup Logo">
+          <defs>
+            <linearGradient id="msgGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8b5cf6" />
+              <stop offset="50%" stop-color="#6366f1" />
+              <stop offset="100%" stop-color="#06b6d4" />
+            </linearGradient>
+            <linearGradient id="msgGradGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ec4899" />
+              <stop offset="100%" stop-color="#8b5cf6" />
+            </linearGradient>
+            <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          <g filter="url(#logoGlow)">
+            <polygon points="22,4 38,13 38,31 22,40 6,31 6,13" fill="none" stroke="url(#msgGradPrimary)" stroke-width="2.5" stroke-linejoin="round" />
+            <path d="M14 28L14 16L22 22L30 16L30 28" stroke="url(#msgGradGlow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            <circle cx="22" cy="22" r="2.5" fill="#38bdf8" />
+          </g>
+          <text x="48" y="27" font-family="'Poppins', sans-serif" font-weight="700" font-size="20" fill="#ffffff" letter-spacing="-0.5">MetaSkill</text>
+          <text x="144" y="27" font-family="'Poppins', sans-serif" font-weight="600" font-size="14" fill="#8b5cf6" letter-spacing="1.5">GROUP</text>
+        </svg>
+      </a>
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active">
+              <span>Home</span>
+            </a>
+          </li>
+          <!-- Services: Mega Menu -->
+          <li class="nav-item has-dropdown has-megamenu">
+            <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span>Services</span>
+              <i class="fa-solid fa-chevron-down chevron-icon" aria-hidden="true"></i>
+            </button>
+            <div class="megamenu-panel" role="region" aria-label="Services Mega Menu">
+              <div class="megamenu-content">
+                <div class="megamenu-col">
+                  <h3 class="megamenu-col-heading">
+                    <i class="fa-solid fa-wand-magic-sparkles col-header-icon" aria-hidden="true"></i>
+                    Design &amp; Creative
+                  </h3>
+                  <ul class="megamenu-links">
+                    <li>
+                      <a href="#ui-ux" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-pen-nib"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">UI/UX Architecture</span>
+                          <span class="item-desc">High-conversion design systems &amp; prototypes</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#brand-identity" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-shapes"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">Brand Identity</span>
+                          <span class="item-desc">Memorable logos, guidelines &amp; assets</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#motion-graphics" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-film"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">Motion &amp; 3D Visuals</span>
+                          <span class="item-desc">Interactive physics &amp; cinematic web animation</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#design-systems" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-cubes"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">Scalable Design Tokens</span>
+                          <span class="item-desc">Enterprise Figma &amp; code-synced kits</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="megamenu-col">
+                  <h3 class="megamenu-col-heading">
+                    <i class="fa-solid fa-code col-header-icon" aria-hidden="true"></i>
+                    Development
+                  </h3>
+                  <ul class="megamenu-links">
+                    <li>
+                      <a href="#fullstack" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">Full-Stack Web Apps</span>
+                          <span class="item-desc">Modern React, Next.js &amp; Node architectures</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#mobile" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">Mobile Engineering</span>
+                          <span class="item-desc">iOS &amp; Android cross-platform solutions</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#cloud-devops" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">Cloud &amp; DevOps</span>
+                          <span class="item-desc">Zero-downtime CI/CD &amp; AWS serverless infra</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#apis" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-network-wired"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">API &amp; Microservices</span>
+                          <span class="item-desc">Ultra-low latency GraphQL &amp; REST pipelines</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="megamenu-col">
+                  <h3 class="megamenu-col-heading">
+                    <i class="fa-solid fa-brain col-header-icon" aria-hidden="true"></i>
+                    AI &amp; Innovation
+                  </h3>
+                  <ul class="megamenu-links">
+                    <li>
+                      <a href="#gen-ai" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-robot"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">Generative AI Engines</span>
+                          <span class="item-desc">Custom LLM fine-tuning &amp; agentic copilots</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#data-eng" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">Smart Data Systems</span>
+                          <span class="item-desc">Predictive modeling &amp; real-time analytics</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#automation" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-gears"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">Autonomous Workflows</span>
+                          <span class="item-desc">End-to-end task robotics &amp; integration bots</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#security" class="menu-item-link">
+                        <div class="item-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="item-text">
+                          <span class="item-title">AI Cyber Defense</span>
+                          <span class="item-desc">Zero-trust penetration testing &amp; compliance</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="megamenu-col featured-col">
+                  <div class="featured-card">
+                    <div class="featured-badge">Featured Program</div>
+                    <div class="featured-card-body">
+                      <div class="featured-icon-wrapper">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                      </div>
+                      <h4 class="featured-title">Accelerate with MetaSkill Pro</h4>
+                      <p class="featured-text">Transform your engineering team with dedicated enterprise mentorship, verified code reviews, and bespoke AI sandboxes.</p>
+                      <a href="#explore-services" class="featured-btn">
+                        <span>Explore Program</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!
+          <li class="nav-item has-dropdown has-nested">
+            <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span>Resources</span>
+              <i class="fa-solid fa-chevron-down chevron-icon" aria-hidden="true"></i>
+            </button>
+            <div class="nested-dropdown-panel" role="region" aria-label="Resources Menu">
+              <ul class="nested-menu-list level-1">
+                <
+                <li class="nested-item has-sub">
+                  <button class="nested-link" aria-expanded="false" aria-haspopup="true">
+                    <span class="nested-item-label">
+                      <i class="fa-solid fa-newspaper item-sub-icon"></i>
+                      Blogs &amp; Insights
+                    </span>
+                    <i class="fa-solid fa-chevron-right nested-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="sub-menu-panel level-2">
+                    <ul class="nested-menu-list">
+                      <li class="nested-item">
+                        <a href="#tech-trends" class="nested-link">
+                          <span class="nested-item-label"><i class="fa-solid fa-microchip item-sub-icon"></i> Tech Trends 2026</span>
+                        </a>
+                      </li>
+                      <li class="nested-item">
+                        <a href="#case-studies" class="nested-link">
+                          <span class="nested-item-label"><i class="fa-solid fa-briefcase item-sub-icon"></i> Case Studies</span>
+                        </a>
+                      </li>
+                      <li class="nested-item">
+                        <a href="#eng-leadership" class="nested-link">
+                          <span class="nested-item-label"><i class="fa-solid fa-users-gear item-sub-icon"></i> Engineering Culture</span>
+                        </a>
+                      </li>
+                      <li class="nested-item">
+                        <a href="#product-logs" class="nested-link">
+                          <span class="nested-item-label"><i class="fa-solid fa-code-commit item-sub-icon"></i> Product Changelogs</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                
+                <li class="nested-item has-sub">
+                  <button class="nested-link" aria-expanded="false" aria-haspopup="true">
+                    <span class="nested-item-label">
+                      <i class="fa-solid fa-graduation-cap item-sub-icon"></i>
+                      Tutorials
+                    </span>
+                    <i class="fa-solid fa-chevron-right nested-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="sub-menu-panel level-2">
+                    <ul class="nested-menu-list">
+                      
+                      <li class="nested-item has-sub">
+                        <button class="nested-link" aria-expanded="false" aria-haspopup="true">
+                          <span class="nested-item-label"><i class="fa-brands fa-react item-sub-icon"></i> Frontend Masters</span>
+                          <i class="fa-solid fa-chevron-right nested-chevron" aria-hidden="true"></i>
+                        </button>
+                        
+                        <div class="sub-menu-panel level-3">
+                          <ul class="nested-menu-list">
+                            <li class="nested-item"><a href="#react-19" class="nested-link"><span class="nested-item-label"><i class="fa-solid fa-atom item-sub-icon"></i> React 19 &amp; Next.js 15</span></a></li>
+                            <li class="nested-item"><a href="#css-animations" class="nested-link"><span class="nested-item-label"><i class="fa-brands fa-css3-alt item-sub-icon"></i> Modern CSS &amp; 3D Glass</span></a></li>
+                            <li class="nested-item"><a href="#webgl-canvas" class="nested-link"><span class="nested-item-label"><i class="fa-solid fa-cube item-sub-icon"></i> WebGL &amp; Three.js</span></a></li>
+                            <li class="nested-item"><a href="#typescript" class="nested-link"><span class="nested-item-label"><i class="fa-solid fa-file-code item-sub-icon"></i> TypeScript Mastery</span></a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="nested-item"><a href="#backend-systems" class="nested-link"><span class="nested-item-label"><i class="fa-solid fa-server item-sub-icon"></i> Backend Architectures</span></a></li>
+                      <li class="nested-item"><a href="#ai-prompting" class="nested-link"><span class="nested-item-label"><i class="fa-solid fa-microchip-ai item-sub-icon"></i> AI Systems &amp; Agents</span></a></li>
+                      <li class="nested-item"><a href="#mobile-dev" class="nested-link"><span class="nested-item-label"><i class="fa-solid fa-mobile-screen item-sub-icon"></i> Flutter &amp; React Native</span></a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nested-item">
+                  <a href="#templates" class="nested-link">
+                    <span class="nested-item-label"><i class="fa-solid fa-layer-group item-sub-icon"></i> Templates &amp; Starters</span>
+                  </a>
+                </li>
+                <li class="nested-item">
+                  <a href="#documentation" class="nested-link">
+                    <span class="nested-item-label"><i class="fa-solid fa-book-bookmark item-sub-icon"></i> API Documentation</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          
+          <li class="nav-item has-dropdown has-megamenu">
+            <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span>Marketplace</span>
+              <i class="fa-solid fa-chevron-down chevron-icon" aria-hidden="true"></i>
+            </button>
+            <div class="megamenu-panel" role="region" aria-label="Marketplace Mega Menu">
+              <div class="megamenu-content">
+                <div class="megamenu-col">
+                  <h3 class="megamenu-col-heading"><i class="fa-solid fa-palette col-header-icon"></i> UI Kits &amp; Templates</h3>
+                  <ul class="megamenu-links">
+                    <li><a href="#saas-kit" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-table-columns"></i></div><div class="item-text"><span class="item-title">SaaS Dashboard Pro</span><span class="item-desc">60+ modular views in Figma &amp; HTML5</span></div></a></li>
+                    <li><a href="#ecommerce-pack" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-bag-shopping"></i></div><div class="item-text"><span class="item-title">Storefront Omni</span><span class="item-desc">High-conversion checkout &amp; cart UI</span></div></a></li>
+                    <li><a href="#glass-kit" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-gem"></i></div><div class="item-text"><span class="item-title">Aero Glass UI Kit</span><span class="item-desc">Pure CSS glassmorphic widgets &amp; modals</span></div></a></li>
+                    <li><a href="#mobile-kit" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-mobile"></i></div><div class="item-text"><span class="item-title">Mobile Wireframe Kit</span><span class="item-desc">Over 200 screen patterns for iOS &amp; Android</span></div></a></li>
+                  </ul>
+                </div>
+                <div class="megamenu-col">
+                  <h3 class="megamenu-col-heading"><i class="fa-solid fa-terminal col-header-icon"></i> Developer Assets</h3>
+                  <ul class="megamenu-links">
+                    <li><a href="#react-components" class="menu-item-link"><div class="item-icon-box"><i class="fa-brands fa-react"></i></div><div class="item-text"><span class="item-title">React Component Foundry</span><span class="item-desc">Accessible, headless UI blocks with Tailwind</span></div></a></li>
+                    <li><a href="#nextjs-stacks" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-rocket"></i></div><div class="item-text"><span class="item-title">Next.js 15 Enterprise</span><span class="item-desc">Pre-configured auth, Stripe, and Prisma ORM</span></div></a></li>
+                    <li><a href="#api-boilerplates" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-server"></i></div><div class="item-text"><span class="item-title">Backend Starters</span><span class="item-desc">FastAPI, NestJS &amp; Go microservice templates</span></div></a></li>
+                    <li><a href="#webflow-pack" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-cloud"></i></div><div class="item-text"><span class="item-title">Webflow Clean Stacks</span><span class="item-desc">CMS-powered marketing sites with custom JS</span></div></a></li>
+                  </ul>
+                </div>
+                <div class="megamenu-col">
+                  <h3 class="megamenu-col-heading"><i class="fa-solid fa-icons col-header-icon"></i> Creative Graphics</h3>
+                  <ul class="megamenu-links">
+                    <li><a href="#3d-assets" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-cube"></i></div><div class="item-text"><span class="item-title">3D Glass Glyphs</span><span class="item-desc">120+ high-res raytraced transparent icons</span></div></a></li>
+                    <li><a href="#illustrations" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-paintbrush"></i></div><div class="item-text"><span class="item-title">Cyber Vector Bundle</span><span class="item-desc">Scalable tech scenes &amp; avatar packs</span></div></a></li>
+                    <li><a href="#animation-presets" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-burst"></i></div><div class="item-text"><span class="item-title">Lottie Motion Library</span><span class="item-desc">Smooth interactive micro-animations</span></div></a></li>
+                    <li><a href="#font-pack" class="menu-item-link"><div class="item-icon-box"><i class="fa-solid fa-font"></i></div><div class="item-text"><span class="item-title">Display Typography Kit</span><span class="item-desc">Futuristic headlines &amp; variable font weights</span></div></a></li>
+                  </ul>
+                </div>
+                <div class="megamenu-col featured-col">
+                  <div class="featured-card marketplace-featured">
+                    <div class="featured-badge hot-badge">Limited Deal</div>
+                    <div class="featured-card-body">
+                      <div class="featured-icon-wrapper"><i class="fa-solid fa-crown"></i></div>
+                      <h4 class="featured-title">Ultimate Creator Pass 2026</h4>
+                      <p class="featured-text">Unlock all 450+ current and future UI kits, code libraries, and 3D assets with lifetime VIP updates.</p>
+                      <a href="#get-pass" class="featured-btn">
+                        <span>Get 40% Off</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a href="#about" class="nav-link"><span>About</span></a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"><span>Contact</span></a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <button class="action-btn search-trigger-btn" id="searchTriggerBtn" aria-label="Open search modal">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <a href="#get-started" class="btn btn-primary nav-cta-btn">
+          <span>Get Started</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Site Search Dialog" hidden>
+    <div class="search-backdrop" id="searchBackdrop"></div>
+    <div class="search-modal-card">
+      <div class="search-header">
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+          <input type="search" id="searchInput" class="search-input" placeholder="Search templates, services, tutorials, docs..." autocomplete="off">
+          <button type="button" class="search-clear-btn" id="searchClearBtn" aria-label="Clear search input">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <button class="search-close-btn" id="searchCloseBtn" aria-label="Close search modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="search-suggestions">
+        <span class="suggestions-label">Popular Searches:</span>
+        <div class="suggestion-tags">
+          <button type="button" class="suggestion-tag">Design Systems</button>
+          <button type="button" class="suggestion-tag">Next.js 15</button>
+          <button type="button" class="suggestion-tag">Glassmorphism</button>
+          <button type="button" class="suggestion-tag">AI Copilots</button>
+          <button type="button" class="suggestion-tag">SaaS UI Kit</button>
+        </div>
+      </div>
+      <div class="search-footer-hint">
+        <span><kbd>ESC</kbd> to close</span>
+        <span><kbd>TAB</kbd> to navigate</span>
+        <span><kbd>ENTER</kbd> to search</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mobile-drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Drawer">
+    <div class="drawer-header">
+      <a href="#home" class="drawer-logo" aria-label="MetaSkillGroup Homepage">
+        <svg class="logo-svg-small" viewBox="0 0 160 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+          <polygon points="18,3 31,10 31,25 18,32 5,25 5,10" fill="none" stroke="#8b5cf6" stroke-width="2" />
+          <path d="M11 22L11 13L18 18L25 13L25 22" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <text x="38" y="22" font-family="'Poppins', sans-serif" font-weight="700" font-size="16" fill="#ffffff">MetaSkill</text>
+        </svg>
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close mobile menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="drawer-nav" aria-label="Mobile Drawer Navigation">
+      <ul class="accordion-list">
+        <li class="accordion-item">
+          <a href="#home" class="accordion-link nav-direct-link active">
+            <i class="fa-solid fa-house accordion-item-icon"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        
+        <li class="accordion-item has-accordion">
+          <button class="accordion-header" aria-expanded="false">
+            <div class="header-left">
+              <i class="fa-solid fa-layer-group accordion-item-icon"></i>
+              <span>Services</span>
+            </div>
+            <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+          </button>
+          <div class="accordion-collapse">
+            <div class="accordion-body">
+              <div class="accordion-group">
+                <span class="group-title">Design &amp; Creative</span>
+                <ul class="sub-links">
+                  <li><a href="#ui-ux" class="drawer-sublink"><i class="fa-solid fa-pen-nib"></i> UI/UX Architecture</a></li>
+                  <li><a href="#brand-identity" class="drawer-sublink"><i class="fa-solid fa-shapes"></i> Brand Identity</a></li>
+                  <li><a href="#motion-graphics" class="drawer-sublink"><i class="fa-solid fa-film"></i> Motion &amp; 3D Visuals</a></li>
+                  <li><a href="#design-systems" class="drawer-sublink"><i class="fa-solid fa-cubes"></i> Scalable Design Tokens</a></li>
+                </ul>
+              </div>
+              <div class="accordion-group">
+                <span class="group-title">Development</span>
+                <ul class="sub-links">
+                  <li><a href="#fullstack" class="drawer-sublink"><i class="fa-solid fa-laptop-code"></i> Full-Stack Web Apps</a></li>
+                  <li><a href="#mobile" class="drawer-sublink"><i class="fa-solid fa-mobile-screen-button"></i> Mobile Engineering</a></li>
+                  <li><a href="#cloud-devops" class="drawer-sublink"><i class="fa-solid fa-cloud-arrow-up"></i> Cloud &amp; DevOps</a></li>
+                  <li><a href="#apis" class="drawer-sublink"><i class="fa-solid fa-network-wired"></i> API &amp; Microservices</a></li>
+                </ul>
+              </div>
+              <div class="accordion-group">
+                <span class="group-title">AI &amp; Innovation</span>
+                <ul class="sub-links">
+                  <li><a href="#gen-ai" class="drawer-sublink"><i class="fa-solid fa-robot"></i> Generative AI Engines</a></li>
+                  <li><a href="#data-eng" class="drawer-sublink"><i class="fa-solid fa-chart-line"></i> Smart Data Systems</a></li>
+                  <li><a href="#automation" class="drawer-sublink"><i class="fa-solid fa-gears"></i> Autonomous Workflows</a></li>
+                  <li><a href="#security" class="drawer-sublink"><i class="fa-solid fa-shield-halved"></i> AI Cyber Defense</a></li>
+                </ul>
+              </div>
+              <div class="drawer-promo-card">
+                <span class="promo-pill">Pro Member</span>
+                <h5>Accelerate with MetaSkill Pro</h5>
+                <p>Enterprise mentorship &amp; AI sandboxes.</p>
+                <a href="#explore-services" class="promo-btn">Explore Now</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li class="accordion-item has-accordion">
+          <button class="accordion-header" aria-expanded="false">
+            <div class="header-left">
+              <i class="fa-solid fa-book-open-reader accordion-item-icon"></i>
+              <span>Resources</span>
+            </div>
+            <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+          </button>
+          <div class="accordion-collapse">
+            <div class="accordion-body">
+              <div class="nested-accordion-item">
+                <button class="nested-accordion-header" aria-expanded="false">
+                  <span><i class="fa-solid fa-newspaper"></i> Blogs &amp; Insights</span>
+                  <i class="fa-solid fa-chevron-down nested-arrow"></i>
+                </button>
+                <div class="nested-accordion-collapse">
+                  <ul class="nested-sub-links">
+                    <li><a href="#tech-trends" class="drawer-sublink"><i class="fa-solid fa-microchip"></i> Tech Trends 2026</a></li>
+                    <li><a href="#case-studies" class="drawer-sublink"><i class="fa-solid fa-briefcase"></i> Case Studies</a></li>
+                    <li><a href="#eng-leadership" class="drawer-sublink"><i class="fa-solid fa-users-gear"></i> Engineering Culture</a></li>
+                    <li><a href="#product-logs" class="drawer-sublink"><i class="fa-solid fa-code-commit"></i> Product Changelogs</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="nested-accordion-item">
+                <button class="nested-accordion-header" aria-expanded="false">
+                  <span><i class="fa-solid fa-graduation-cap"></i> Tutorials</span>
+                  <i class="fa-solid fa-chevron-down nested-arrow"></i>
+                </button>
+                <div class="nested-accordion-collapse">
+                  <ul class="nested-sub-links">
+                    <li class="level-3-accordion-item">
+                      <button class="level3-accordion-header" aria-expanded="false">
+                        <span><i class="fa-brands fa-react"></i> Frontend Masters</span>
+                        <i class="fa-solid fa-chevron-down level3-arrow"></i>
+                      </button>
+                      <div class="level3-accordion-collapse">
+                        <ul class="level-3-links">
+                          <li><a href="#react-19" class="drawer-sublink"><i class="fa-solid fa-atom"></i> React 19 &amp; Next.js 15</a></li>
+                          <li><a href="#css-animations" class="drawer-sublink"><i class="fa-brands fa-css3-alt"></i> Modern CSS &amp; 3D Glass</a></li>
+                          <li><a href="#webgl-canvas" class="drawer-sublink"><i class="fa-solid fa-cube"></i> WebGL &amp; Three.js</a></li>
+                          <li><a href="#typescript" class="drawer-sublink"><i class="fa-solid fa-file-code"></i> TypeScript Mastery</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li><a href="#backend-systems" class="drawer-sublink"><i class="fa-solid fa-server"></i> Backend Architectures</a></li>
+                    <li><a href="#ai-prompting" class="drawer-sublink"><i class="fa-solid fa-microchip-ai"></i> AI Systems &amp; Agents</a></li>
+                    <li><a href="#mobile-dev" class="drawer-sublink"><i class="fa-solid fa-mobile-screen"></i> Flutter &amp; React Native</a></li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="sub-links standalone">
+                <li><a href="#templates" class="drawer-sublink"><i class="fa-solid fa-layer-group"></i> Templates &amp; Starters</a></li>
+                <li><a href="#documentation" class="drawer-sublink"><i class="fa-solid fa-book-bookmark"></i> API Documentation</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <!-- Marketplace Accordion -->
+        <li class="accordion-item has-accordion">
+          <button class="accordion-header" aria-expanded="false">
+            <div class="header-left">
+              <i class="fa-solid fa-store accordion-item-icon"></i>
+              <span>Marketplace</span>
+            </div>
+            <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+          </button>
+          <div class="accordion-collapse">
+            <div class="accordion-body">
+              <div class="accordion-group">
+                <span class="group-title">UI Kits &amp; Templates</span>
+                <ul class="sub-links">
+                  <li><a href="#saas-kit" class="drawer-sublink"><i class="fa-solid fa-table-columns"></i> SaaS Dashboard Pro</a></li>
+                  <li><a href="#ecommerce-pack" class="drawer-sublink"><i class="fa-solid fa-bag-shopping"></i> Storefront Omni</a></li>
+                  <li><a href="#glass-kit" class="drawer-sublink"><i class="fa-solid fa-gem"></i> Aero Glass UI Kit</a></li>
+                </ul>
+              </div>
+              <div class="accordion-group">
+                <span class="group-title">Developer Assets</span>
+                <ul class="sub-links">
+                  <li><a href="#react-components" class="drawer-sublink"><i class="fa-brands fa-react"></i> React Component Foundry</a></li>
+                  <li><a href="#nextjs-stacks" class="drawer-sublink"><i class="fa-solid fa-rocket"></i> Next.js 15 Enterprise</a></li>
+                </ul>
+              </div>
+              <div class="drawer-promo-card">
+                <span class="promo-pill hot-pill">Save 40%</span>
+                <h5>Ultimate Creator Pass 2026</h5>
+                <p>Access all 450+ assets with lifetime VIP upgrades.</p>
+                <a href="#get-pass" class="promo-btn">Claim Deal</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="accordion-item"><a href="#about" class="accordion-link nav-direct-link"><i class="fa-solid fa-circle-info accordion-item-icon"></i><span>About</span></a></li>
+        <li class="accordion-item"><a href="#contact" class="accordion-link nav-direct-link"><i class="fa-solid fa-envelope accordion-item-icon"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+    <div class="drawer-footer">
+      <a href="#get-started" class="btn btn-primary drawer-cta-btn"><span>Get Started Free</span><i class="fa-solid fa-arrow-right"></i></a>
+      <div class="drawer-socials">
+        <a href="#github" aria-label="MetaSkillGroup GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#twitter" aria-label="MetaSkillGroup Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#discord" aria-label="MetaSkillGroup Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="#linkedin" aria-label="MetaSkillGroup LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+      <p class="drawer-copyright">&copy; 2026 MetaSkillGroup. All rights reserved.</p>
+    </div>
+  </aside>
+  
+  <main id="mainContent">
+    <section class="hero-section" id="home">
+      <div class="hero-container">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>MetaSkill 3.0 Architecture Live</span>
+        </div>
+        <h1 class="hero-title">
+          Empowering The Next Generation of <span class="gradient-text">Tech Creators</span>
+        </h1>
+        <p class="hero-description">
+          A high-performance navigation system built with modern Glassmorphism, seamless multi-level nested dropdowns, and responsive mobile architecture. Precision-engineered for contemporary web applications.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#get-started" class="btn btn-primary btn-large"><span>Explore All Components</span><i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#documentation" class="btn btn-secondary btn-large"><i class="fa-solid fa-book"></i><span>Read Documentation</span></a>
+        </div>
+        <div class="hero-stats-grid">
+          <div class="stat-card"><div class="stat-number">60 FPS</div><div class="stat-label">GPU Smooth Animations</div></div>
+          <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Keyboard &amp; A11y Compliant</div></div>
+          <div class="stat-card"><div class="stat-number">3-Level</div><div class="stat-label">Smart Nested Dropdowns</div></div>
+          <div class="stat-card"><div class="stat-number">0 Deps</div><div class="stat-label">Pure Vanilla HTML/CSS/JS</div></div>
+        </div>
+      </div>
+    </section>
+    <section class="features-section" id="services">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">NAVBAR CAPABILITIES</span>
+          <h2 class="section-title">Built with Cutting-Edge Standards</h2>
+          <p class="section-subtitle">Discover the engineering details behind this unified mega navigation bar.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-shapes"></i></div><h3 class="feature-title">Glassmorphism Aesthetics</h3><p class="feature-desc">Layered translucent backdrop filters, soft radial ambient lighting blobs, and micro-borders crafted for ultra-modern dark dashboards.</p></div>
+          <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-diagram-project"></i></div><h3 class="feature-title">Multi-Column Mega Menus</h3><p class="feature-desc">Full-width organized layout with structured columns, contextual iconography, one-line descriptions, and featured callouts.</p></div>
+          <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-network-wired"></i></div><h3 class="feature-title">Smart Multi-Level Dropdowns</h3><p class="feature-desc">Cascading Level 1, 2, and 3 sub-menus with side sliding transforms and viewport collision awareness that dynamically flips to the left.</p></div>
+          <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-mobile-screen"></i></div><h3 class="feature-title">Accordion Mobile Drawer</h3><p class="feature-desc">Silky off-canvas drawer equipped with multi-tiered accordions, body scroll locks, and responsive touch transitions.</p></div>
+          <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-arrows-up-down"></i></div><h3 class="feature-title">Dynamic Scroll Physics</h3><p class="feature-desc">Header smartly contracts after 50px, automatically disappears on scroll down, reappears on scroll up, and tracks reading progress.</p></div>
+          <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-universal-access"></i></div><h3 class="feature-title">A11y &amp; Keyboard First</h3><p class="feature-desc">Comprehensive ARIA tags (aria-expanded, aria-haspopup), full Tab / Enter / Escape keyboard accessibility, and reduced-motion protection.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="showcase-section" id="resources">
+      <div class="section-container">
+        <div class="showcase-box">
+          <div class="showcase-content">
+            <span class="showcase-badge">Live Demonstration</span>
+            <h2 class="showcase-title">Test the Scroll Physics &amp; Mega Menus</h2>
+            <p class="showcase-text">Try hovering or tabbing through the Services and Marketplace mega menus above to inspect the staggered item animations. Hover over Resources &rarr; Tutorials &rarr; Frontend Masters to see the 3-level cascading menu in action.</p>
+            <div class="showcase-tags">
+              <span class="tag-pill"><i class="fa-solid fa-check"></i> Sticky Header Shrink</span>
+              <span class="tag-pill"><i class="fa-solid fa-check"></i> Scroll Progress Bar</span>
+              <span class="tag-pill"><i class="fa-solid fa-check"></i> Staggered Links</span>
+              <span class="tag-pill"><i class="fa-solid fa-check"></i> Search Modal Shortcut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content-depth-section" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">SYSTEM METRICS</span>
+          <h2 class="section-title">Performance Benchmark</h2>
+          <p class="section-subtitle">Engineered without heavy frameworks for peak loading and animation fidelity.</p>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card"><div class="metric-val">0 kB</div><div class="metric-name">Framework Overhead</div><p class="metric-sub">Pure standard Web APIs and CSS3 transforms</p></div>
+          <div class="metric-card"><div class="metric-val">&lt; 15 ms</div><div class="metric-name">Drawer Latency</div><p class="metric-sub">Instant response on mobile touch interactions</p></div>
+          <div class="metric-card"><div class="metric-val">100 / 100</div><div class="metric-name">Lighthouse Score</div><p class="metric-sub">Semantic HTML5 tags and high-contrast glass panels</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="bottom-cta-section" id="contact">
+      <div class="section-container">
+        <div class="cta-banner-glass">
+          <h2 class="cta-title">Ready to Integrate MetaSkill Components?</h2>
+          <p class="cta-desc">Copy the clean HTML, CSS, and JS files into your project and experience production-grade navigation today.</p>
+          <div class="cta-actions">
+            <a href="#get-started" class="btn btn-primary btn-large"><span>Get Component Files</span><i class="fa-solid fa-download"></i></a>
+            <button type="button" class="btn btn-secondary btn-large search-trigger-btn"><i class="fa-solid fa-magnifying-glass"></i><span>Search Library</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-desc">Crafting premium, accessible, and high-performance UI components for forward-thinking engineering teams.</p>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Ecosystem</h4>
+          <ul>
+            <li><a href="#saas-kit">SaaS Dashboard Pro</a></li>
+            <li><a href="#glass-kit">Aero Glass UI</a></li>
+            <li><a href="#react-components">React Foundry</a></li>
+            <li><a href="#documentation">API Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Connect</h4>
+          <ul>
+            <li><a href="#github"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li><a href="#twitter"><i class="fa-brands fa-x-twitter"></i> Twitter / X</a></li>
+            <li><a href="#discord"><i class="fa-brands fa-discord"></i> Discord Community</a></li>
+            <li><a href="#linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MetaSkillGroup. Designed and developed with pure HTML, CSS, and Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
